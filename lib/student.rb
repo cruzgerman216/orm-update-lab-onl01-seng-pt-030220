@@ -58,7 +58,6 @@ class Student
     end
 
     def self.find_by_name(name)
-
       sql = <<-SQL
       SELECT *
       FROM students
@@ -69,5 +68,6 @@ class Student
     DB[:conn].execute(sql,name).map do |row|
       self.new_from_db(row)
     end.first
+
     end
 end
