@@ -66,6 +66,6 @@ class Student
     SQL
 
     get = DB[:conn].execute(sql,name)[0]
-      Student.new(id:get[1],name: get[1], grade:get[2])
+      Student.new(get[1], get[2],get[0])
     end
 end
